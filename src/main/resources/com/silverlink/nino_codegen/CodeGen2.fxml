@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.silverlink.nino_codegen.CodeGenController">
+   <bottom>
+      <VBox BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane id="titleBar" onMouseDragged="#dragged" onMousePressed="#pressed">
+               <children>
+                  <ImageView fx:id="imgMinimize" fitHeight="20.0" fitWidth="20.0" layoutX="520.0" layoutY="5.0" onMousePressed="#imgMinimizeOnPressed" onMouseReleased="#imgMinimizeOnReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/minimize-window-64.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgMaximize" fitHeight="20.0" fitWidth="20.0" layoutX="543.0" layoutY="5.0" onMousePressed="#imgMaximizeOnPressed" onMouseReleased="#imgMaximizeOnReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/maximize-window-64.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgClose" fitHeight="20.0" fitWidth="20.0" layoutX="566.0" layoutY="5.0" onMousePressed="#imgCloseOnPressed" onMouseReleased="#imgCloseOnReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/close-window-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblTitle" layoutX="17.0" layoutY="7.0" text="Nino CodeGen" />
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </AnchorPane>
+             <MenuBar prefHeight="25.0" prefWidth="1280.0">
+                 <menus>
+                     <Menu mnemonicParsing="false" text="Proyecto">
+                         <items>
+                             <MenuItem fx:id="mnIt_Nuevo" mnemonicParsing="false" onAction="#mnIt_NuevoOnAction" text="Nuevo">
+                                 <accelerator>
+                                     <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                             </MenuItem>
+                             <MenuItem mnemonicParsing="false" text="Abrir">
+                                 <accelerator>
+                                     <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                             </MenuItem>
+                             <Menu mnemonicParsing="false" text="Abrir reciente">
+                                 <items>
+                                     <MenuItem mnemonicParsing="false" />
+                                 </items>
+                             </Menu>
+                             <MenuItem mnemonicParsing="false" text="Guardar">
+                                 <accelerator>
+                                     <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                             </MenuItem>
+                             <SeparatorMenuItem mnemonicParsing="false" />
+                             <MenuItem mnemonicParsing="false" text="Salir">
+                                 <accelerator>
+                                     <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                 </accelerator>
+                             </MenuItem>
+                         </items>
+                     </Menu>
+                 </menus>
+             </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>
